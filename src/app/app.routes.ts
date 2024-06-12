@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 export const routes: Routes = [
     { path: "home", component: DashbroadComponent  },
     { path: "User", component: DsUserComponent  },
-    { path: "Product", component: DsProductComponent  },
+    { path: "Angular/Product", component: DsProductComponent  },
     { path: "changeProduct", component: ChangeProductComponent  },
     { path: "creartProduct", component: CreateProductComponent  },
     { path: "resgister", component: RegisterComponent  },
