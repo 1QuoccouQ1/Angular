@@ -1,0 +1,31 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit(formLogin)" #formLogin="ngForm">
+
+                <div class="sign-up">
+                    <div class="word-main " style="margin-bottom: 100px;     margin-left: 119px;"><strong>Log In</strong></div>
+                    <div class="user">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="usernameInput" type="text" placeholder="Your Name" name="username" ngModel class="form-control" />
+                    </div>
+                    <div class="pass">
+                    <i class="fa-solid fa-lock"></i>
+                    <input id="passwordInput" type="password" placeholder="Password" name ="password" ngModel class="form-control"/>
+                    </div>
+                    <div class="message"> {{err ? err : ""}}</div>
+                    <div class="button">
+                    <input id="agreeCheckbox" type="checkbox" /> I agree all statements in
+                    <span class="underline">Term of service</span>
+                    </div>
+                    <button type="submit" class="register" id="loginButton">Login</button >
+                </div>
+    </form>
+    
+  <div class="image">
+    <div class="image-main">
+      <img src="https://cdn.pixabay.com/photo/2024/02/19/02/02/meadows-8582365_1280.png" width="380px" height="450px" alt="" />
+    </div>
+    <div class="word">
+      <span class="underline">I am already member</span>login
+    </div>
+  </div>
+</div>

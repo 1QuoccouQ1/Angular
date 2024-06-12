@@ -1,0 +1,103 @@
+<main class="flex-1">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+      <div class="p-6 flex flex-row space-y-0 items-start gap-2">
+        <div class="grid gap-1">
+          <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Change Product</h3>
+          <p class="text-sm text-muted-foreground">Enter product details</p>
+        </div>
+      </div>
+      <div *ngFor="let s of subjects " class="p-6 grid gap-4 md:gap-6">
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="name">
+            Name
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="name"
+            type="text"
+            placeholder="Enter product name..."
+            [(ngModel)]="product.name"
+            [(ngModel)]="subject.nameProduct"
+          />
+        </div>
+        <div class="grid gap-2">
+          <label
+            class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
+            for="description"
+          >
+            Description
+          </label>
+          <textarea
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+            id="description"
+            placeholder="Enter product description..."
+            [(ngModel)]="product.description"
+            [(ngModel)]="subject.description"
+
+          ></textarea>
+        </div>
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="price">
+            Price
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="price"
+            placeholder="Enter product price..."
+            type="number"
+            [(ngModel)]="product.price"
+            [(ngModel)]="subject.priceProduct"
+            
+          />
+        </div>
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="category">
+              Category
+          </label>
+          
+          <input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="price"
+            placeholder="Enter product price..."
+            type="number"
+            [(ngModel)]="product.idCategory"
+            [(ngModel)]="subject.idCategory"
+            
+          />
+      </div>
+      
+        <div class="grid gap-2">
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="image">
+            Image
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="image"
+            placeholder="Select file..."
+            type="file"
+            [(ngModel)]="product.image"
+
+          />
+          <p>Hoặc </p>
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="url">
+            Url:
+          </label>
+          <input
+            class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+            id="url"
+            placeholder="Url ..."
+            type="text"
+            [(ngModel)]="product.url"
+            [(ngModel)]="subject.images"
+
+          />
+          
+        </div>
+      </div>
+      <div class="flex items-center p-6">
+        <button id="addCategoryButton" (click)="onChange(product.name, product.price, product.url, product.description,product.idCategory)" class="bg-blue-700 text-white inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+            Change Product
+        </button>
+      </div>
+    </div>
+  </main>

@@ -1,0 +1,207 @@
+    <main class="flex-1 w-full">
+      <div class="px-8">
+        <div class="grid grid-cols-3 gap-6 my-6">
+          <div class="border text-card-foreground col-span-1 bg-white rounded-lg shadow" data-v0-t="card">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Project Overview</h3>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-2xl font-semibold text-[#5f6368]">{{ data }}</h3>
+                  <p class="text-sm text-[#5f6368]">Project active</p>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-[#5f6368]"
+                >
+                  <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                  <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="border text-card-foreground col-span-1 bg-white rounded-lg shadow" data-v0-t="card">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">{{ user}} User</h3>
+            </div>
+            <div class="">
+              <div class="w-full h-[200px]">
+                <div style="width: 100%; height: 100%;">
+                  <div id="curve_chart" style="width: 100%; height: 100%"></div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="border text-card-foreground col-span-1 bg-white rounded-lg shadow" data-v0-t="card">
+            <div class="flex flex-col space-y-1.5 p-6">
+              <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Message</h3>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#5f6368]"
+              >
+                <path d="M5 12h14"></path>
+                <path d="M12 5v14"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">MJ</span>
+                  </span>
+                  <div class="ml-3">
+                    <h4 class="text-sm font-medium text-[#5f6368]">Michale Johan</h4>
+                    <p class="text-xs text-[#5f6368]">Thanks for your work</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">AB</span>
+                  </span>
+                  <div class="ml-3">
+                    <h4 class="text-sm font-medium text-[#5f6368]">Andreas B</h4>
+                    <p class="text-xs text-[#5f6368]">Please make it a little...</p>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+                    <span class="flex h-full w-full items-center justify-center rounded-full bg-muted">AF</span>
+                  </span>
+                  <div class="ml-3">
+                    <h4 class="text-sm font-medium text-[#5f6368]">Angelina Ferguso</h4>
+                    <p class="text-xs text-[#5f6368]">Your work is fantastic</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border text-card-foreground bg-white rounded-lg shadow" data-v0-t="card">
+          <div class="flex flex-col space-y-1.5 p-6">
+            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Recent Orders</h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="text-[#5f6368]"
+            >
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="relative w-full overflow-auto">
+              <table class="w-full caption-bottom text-sm">
+                <thead class="[&amp;_tr]:border-b">
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Customer
+                    </th>
+                    <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Date
+                    </th>
+                    <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Status
+                    </th>
+                    <th class="h-12 px-4 text-left align-middle font-medium [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Total
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="[&amp;_tr:last-child]:border-0">
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Andreas B
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      04 Sep 2020
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">Paid</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">$532</td>
+                  </tr>
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Alexander M
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      03 Sep 2020
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">Paid</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">$1342</td>
+                  </tr>
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Michel Brout
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      03 Sep 2020
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">Pending</td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">$849</td>
+                  </tr>
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Masatukilo
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      02 Sep 2020
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Complete
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">$364</td>
+                  </tr>
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Maria Keller
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      26 Aug 2020
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Complete
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">$1528</td>
+                  </tr>
+                  <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Victoria
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      14 Aug 2020
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">
+                      Complete
+                    </td>
+                    <td class="p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-sm text-[#5f6368]">$469</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main> 

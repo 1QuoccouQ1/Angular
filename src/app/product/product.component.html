@@ -1,0 +1,18 @@
+<div  class="p-4 my-3 duration-500 rounded bg-white flex hover:border border border-transparent hover:border-blue-600 cursor-pointer">
+  <p>Searching " {{name}} "</p>
+    <img class="w-1/3 rounded-lg" src="https://plus.unsplash.com/premium_photo-1679079455767-1bbb40492d6a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHN0dWRpb3xlbnwwfHwwfHx8MA%3D%3D" alt="">
+    <div class="ml-4 w-full flex flex-col justify-between">
+      <div class="flex justify-between text-slate-500">
+        <div>
+          <span class="text-black font-medium">{{ address }}</span> <span>-</span> <span>{{ type }}</span>
+          <p class="text-sm">{{ bedrooms }} bedrooms • {{ bathrooms }} bathrooms • {{ area }}m </p>
+        </div>
+        <p>...</p>
+      </div>
+      <div class="flex justify-between items-center">
+        <p class="text-xl text-blue-500 font-medium">{{ price }}</p>
+        <p class="text-sm">Added {{ addedTime }}</p>
+      </div>
+    </div>
+  </div>
+  
