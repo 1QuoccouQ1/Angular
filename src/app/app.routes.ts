@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { ProductComponent } from './product/product.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 import { DashbroadComponent } from './Components/dashbroad/dashbroad.component';
@@ -9,16 +8,16 @@ import { CreateProductComponent } from './Components/create-product/create-produ
 import { ChangeProductComponent } from './Components/change-product/change-product.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
-    { path: "home", component: DashbroadComponent  },
+    { path: "home", component: DashbroadComponent , canActivate: [AuthGuard] },
     { path: "User", component: DsUserComponent  },
     { path: "Angular/Product", component: DsProductComponent  },
     { path: "changeProduct", component: ChangeProductComponent  },
     { path: "creartProduct", component: CreateProductComponent  },
     { path: "resgister", component: RegisterComponent  },
     { path: "login", component: LoginComponent  },
-    {path:"product", component:ProductComponent},
     {path:"", redirectTo:"login", pathMatch:"full"},
 ];
 @NgModule({

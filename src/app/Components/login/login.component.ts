@@ -26,7 +26,7 @@ export class LoginComponent {
       .subscribe(
         (data: any) => {
           localStorage.setItem('token', data.access_token);
-          this.route.navigate(['/home']);
+          this.route.navigate(['/Angular/Product']);
         },
         (error ) => {
           this.err = "Invalid username or password";
