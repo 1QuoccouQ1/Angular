@@ -1,5 +1,6 @@
 // src/app/auth.service.ts
 import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +8,16 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   constructor() { }
   
+  
   isAuthenticated(): boolean {
     const token = localStorage.getItem('access_token');
-    // Kiểm tra token có tồn tại và có giá trị hợp lệ
-    console.log('token', token);
-    return !!token;
-  }
+    const jwtHelper = new JwtHelperService();
+      if(token === null)
+    return false;
+    return !jwtHelper.isTokenExpired(token);
+    }
+    
+
   getToken(): string | null {
     return localStorage.getItem('access_token');
   }

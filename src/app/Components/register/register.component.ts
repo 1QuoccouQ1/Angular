@@ -19,11 +19,20 @@ export class RegisterComponent {
   }
   err : any;
   onSubmit(form : NgForm){
+
+    if (form.invalid) {
+      // Kiểm tra xem form có hợp lệ hay không
+      return;
+    }
+    if (form.value.password !== form.value.confirm_password) {
+      form.controls['confirm_password'].setErrors({ 'passwordsMismatch': true });
+      return; // Nếu password và confirm_password không khớp, hiển thị thông báo lỗi và dừng lại
+    }
+    
     this.authenService
     .register(form.value.email,form.value.password)
     .subscribe(
       (data)=>{
-      // console.log(data);
       this.route.navigate(['/home']);
     },
       (error)=>{

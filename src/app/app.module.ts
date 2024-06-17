@@ -4,6 +4,7 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http'; // Im
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
+import { AuthService } from './auth.service';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -18,9 +19,7 @@ export function tokenGetter() {
     HttpClientModule, // Import HttpClientModule
     JwtModule.forRoot({
       config: {
-        tokenGetter: tokenGetter,
-        allowedDomains: ['your-api-domain.com'],
-        disallowedRoutes: ['your-api-domain.com/auth/']
+        tokenGetter: tokenGetter
       }
     })
   ],

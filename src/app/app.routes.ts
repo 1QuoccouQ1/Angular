@@ -16,6 +16,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 
+
 export const routes: Routes = [
     { path: "home", component: DashbroadComponent , canActivate: [AuthGuard] },
     { path: "User", component: DsUserComponent , canActivate: [AuthGuard]  },

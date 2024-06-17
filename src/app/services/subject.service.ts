@@ -21,5 +21,8 @@ export class SubjectService {
   getTask(nameTable : string) :Observable<any>{
     return this.http.get(this.url2 + nameTable);
   }
+  DeleteTask(id : any , nameTable : string) :Observable<any>{
+    return this.http.delete(this.url2 + nameTable +'/' + id);
+  }
   
 }

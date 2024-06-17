@@ -1,1 +1,38 @@
-<p>change-task works!</p>
+<main class="flex-1">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+      <div class="p-6 flex flex-row space-y-0 items-start gap-2">
+        <div class="grid gap-1">
+          <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Change Task</h3>
+          <p class="text-sm text-muted-foreground">Enter Task details</p>
+        </div>
+      </div>
+      <form #userForm="ngForm" (ngSubmit)="userForm.valid && onChange(product.name)">
+        <div class="p-6 grid gap-4 md:gap-6">
+          <div class="grid gap-2">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="name">
+              Task Name
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter User Name..."
+              [(ngModel)]="product.name"
+              required
+              #name="ngModel"
+            />
+            <div *ngIf="name.invalid && name.touched" class="text-red-500">
+                Task name is required.
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center p-6">
+          <button type="submit" [disabled]="userForm.invalid" class="bg-blue-700 text-white inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+            Change Task
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+  
