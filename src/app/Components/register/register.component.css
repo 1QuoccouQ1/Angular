@@ -1,13 +1,14 @@
 .container{
     width: 800px;
-    height: 600px;
+    height: auto;
     background-color: #ffffff;
     position: absolute;
     display: flex;
     right:21%;
     top: 60px;
     border-radius: 25px;
-    box-shadow: 0px 0px 60px 1px rgba(0, 0, 0, 0.4)
+    box-shadow: 0px 0px 60px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px;
   
   }
   body{
@@ -105,21 +106,30 @@
   }
 
   .user{
-      margin-bottom: 20px;
-      margin-top: 20px;
-  }
-  .email{
-      margin-bottom: 20px;
-      margin-top: 20px;
-  }
-  .pass{
-      margin-bottom: 20px;
-      margin-top: 20px;
-  }
-  .repeat-pass{
-      margin-bottom: 20px;
-      margin-top: 20px;
-  }
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+align-items: center;
+}
+.email{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+align-items: center;
+}
+.pass{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+align-items: center;
+}
+.repeat-pass{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+align-items: center;
+}
+
 
   .button{
       font-size: 16px;

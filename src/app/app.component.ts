@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   searchQuery: string = '';
   searchQueryPrams:string = ''
   loaing = true;
+  isDropdownVisible: boolean = false;
 
 
 
@@ -48,5 +49,8 @@ export class AppComponent implements OnInit {
   
   onSubmit() {
     console.log(this.formLogin?.value);
+  }
+  Drop() {
+    this.isDropdownVisible = !this.isDropdownVisible;
   }
 }

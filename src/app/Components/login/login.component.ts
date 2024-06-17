@@ -25,8 +25,9 @@ export class LoginComponent {
       .login(form.value.username, form.value.password)
       .subscribe(
         (data: any) => {
-          localStorage.setItem('token', data.access_token);
-          this.route.navigate(['/Angular/Product']);
+          localStorage.setItem('access_token', data.access_token);
+          console.log(data.access_token);
+          this.route.navigate(['/home']);
         },
         (error ) => {
           this.err = "Invalid username or password";

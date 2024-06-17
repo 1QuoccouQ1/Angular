@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
+import { LogoutComponent } from './Components/logout/logout.component';
 import { DashbroadComponent } from './Components/dashbroad/dashbroad.component';
 import { DsUserComponent } from './Components/ds-user/ds-user.component';
 import { DsProductComponent } from './Components/ds-product/ds-product.component';
@@ -12,12 +13,13 @@ import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
     { path: "home", component: DashbroadComponent , canActivate: [AuthGuard] },
-    { path: "User", component: DsUserComponent  },
-    { path: "Angular/Product", component: DsProductComponent  },
-    { path: "changeProduct", component: ChangeProductComponent  },
-    { path: "creartProduct", component: CreateProductComponent  },
+    { path: "User", component: DsUserComponent , canActivate: [AuthGuard]  },
+    { path: "Product", component: DsProductComponent , canActivate: [AuthGuard]  },
+    { path: "changeProduct", component: ChangeProductComponent , canActivate: [AuthGuard]  },
+    { path: "creartProduct", component: CreateProductComponent  , canActivate: [AuthGuard] },
     { path: "resgister", component: RegisterComponent  },
     { path: "login", component: LoginComponent  },
+    { path: "logout", component: LogoutComponent  },
     {path:"", redirectTo:"login", pathMatch:"full"},
 ];
 @NgModule({
@@ -26,3 +28,4 @@ export const routes: Routes = [
 })
 
 export class AppRoutingModule { }
+// , canActivate: [AuthGuard]

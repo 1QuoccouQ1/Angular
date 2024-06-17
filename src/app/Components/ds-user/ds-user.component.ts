@@ -31,7 +31,7 @@ export class DsUserComponent {
   }
   onDelete(id: any , nameTable : string) {
     this.subject.Delete(id,nameTable).subscribe(res => {
-      
+    this.loanding();
     });
   }
   
