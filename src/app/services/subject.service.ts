@@ -10,6 +10,7 @@ export class SubjectService {
   constructor(private http: HttpClient) { }
  
   url = "https://665ef1a61e9017dc16f2221f.mockapi.io/"
+  url2 = "https://66667131a2f8516ff7a36663.mockapi.io/"
 
   getList(nameTable : string) :Observable<any>{
     return this.http.get(this.url + nameTable);
@@ -17,4 +18,8 @@ export class SubjectService {
   Delete(id : any , nameTable : string) :Observable<any>{
     return this.http.delete(this.url + nameTable +'/' + id);
   }
+  getTask(nameTable : string) :Observable<any>{
+    return this.http.get(this.url2 + nameTable);
+  }
+  
 }

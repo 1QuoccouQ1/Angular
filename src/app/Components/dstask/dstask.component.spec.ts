@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DsOrderComponent } from './ds-order.component';
+import { DstaskComponent } from './dstask.component';
 
-describe('DsOrderComponent', () => {
-  let component: DsOrderComponent;
-  let fixture: ComponentFixture<DsOrderComponent>;
+describe('DstaskComponent', () => {
+  let component: DstaskComponent;
+  let fixture: ComponentFixture<DstaskComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DsOrderComponent]
+      imports: [DstaskComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DsOrderComponent);
+    fixture = TestBed.createComponent(DstaskComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

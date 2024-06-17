@@ -1,11 +1,12 @@
 <main class="flex-1">
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-      <div class="p-6 flex flex-row space-y-0 items-start gap-2">
-        <div class="grid gap-1">
-          <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Add Product</h3>
-          <p class="text-sm text-muted-foreground">Enter product details</p>
-        </div>
+  <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+    <div class="p-6 flex flex-row space-y-0 items-start gap-2">
+      <div class="grid gap-1">
+        <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Add Product</h3>
+        <p class="text-sm text-muted-foreground">Enter product details</p>
       </div>
+    </div>
+    <form #productForm="ngForm" (ngSubmit)="onCreate(productForm)">
       <div class="p-6 grid gap-4 md:gap-6">
         <div class="grid gap-2">
           <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="name">
@@ -14,23 +15,32 @@
           <input
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             id="name"
+            name="name"
             placeholder="Enter product name..."
             [(ngModel)]="product.name"
+            required
+            #name="ngModel"
           />
+          <div *ngIf="name.invalid && name.touched" class="text-red-500">
+            Product name is required.
+          </div>
         </div>
         <div class="grid gap-2">
-          <label
-            class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base"
-            for="description"
-          >
+          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="description">
             Description
           </label>
           <textarea
-            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
             id="description"
+            name="description"
             placeholder="Enter product description..."
             [(ngModel)]="product.description"
+            required
+            #description="ngModel"
           ></textarea>
+          <div *ngIf="description.invalid && description.touched" class="text-red-500">
+            Product description is required.
+          </div>
         </div>
         <div class="grid gap-2">
           <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="price">
@@ -39,49 +49,57 @@
           <input
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             id="price"
+            name="price"
             placeholder="Enter product price..."
             type="number"
             [(ngModel)]="product.price"
+            required
+            min="0"
+            #price="ngModel"
           />
+          <div *ngIf="price.invalid && price.touched" class="text-red-500">
+            <div *ngIf="price.errors?.['required']">Product price is required.</div>
+            <div *ngIf="price.errors?.['min']">Product price must be a positive number.</div>
+          </div>
         </div>
         <div class="grid gap-2">
           <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="category">
-              Category
+            Category
           </label>
-          <select class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="category">
-                  <option value="<%= category.idCategory %>"><%= category.nameCategory %></option>
-          </select>
-      </div>
-      
-        <div class="grid gap-2">
-          <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="image">
-            Image
-          </label>
-          <input
+          <select
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            id="image"
-            placeholder="Select file..."
-            type="file"
-            [(ngModel)]="product.image"
-          />
-          <p>Hoặc </p>
+            id="category"
+            name="category"
+            [(ngModel)]="product.category"
+            required
+            #category="ngModel"
+          >
+            <option *ngFor="let category of categories" [value]="category.TaskID">{{ category.TaskName }}</option>
+          </select>
+          <div *ngIf="category.invalid && category.touched" class="text-red-500">
+            Product category is required.
+          </div>
+        </div>
+        <div class="grid gap-2">
           <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="url">
             Url:
           </label>
           <input
             class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             id="url"
+            name="url"
             placeholder="Url ..."
             type="text"
             [(ngModel)]="product.url"
+            #url="ngModel"
           />
-          
         </div>
       </div>
       <div class="flex items-center p-6">
-        <button id="addCategoryButton" (click)="onCreate(product.name, product.price, product.url, product.description)" class="bg-blue-700 text-white inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+        <button type="submit" [disabled]="productForm.invalid" class="bg-blue-700 text-white inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
           Add Product
         </button>
       </div>
-    </div>
-  </main>
+    </form>
+  </div>
+</main>

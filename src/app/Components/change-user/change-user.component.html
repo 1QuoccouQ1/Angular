@@ -1,0 +1,114 @@
+<main class="flex-1">
+    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+      <div class="p-6 flex flex-row space-y-0 items-start gap-2">
+        <div class="grid gap-1">
+          <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Change User</h3>
+          <p class="text-sm text-muted-foreground">Enter User details</p>
+        </div>
+      </div>
+      <form #userForm="ngForm" (ngSubmit)="userForm.valid && onChange(product.name, product.Email, product.FullName, product.Phone, product.Address)">
+        <div class="p-6 grid gap-4 md:gap-6">
+          <div class="grid gap-2">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="name">
+              User Name
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Enter User Name..."
+              [(ngModel)]="product.name"
+              required
+              #name="ngModel"
+            />
+            <div *ngIf="name.invalid && name.touched" class="text-red-500">
+              User name is required.
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="Email">
+              Email
+            </label>
+            <input
+              class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="Email"
+              name="email"
+              type="email"
+              placeholder="Enter Email..."
+              [(ngModel)]="product.Email"
+              required
+              email
+              #email="ngModel"
+            />
+            <div *ngIf="email.invalid && email.touched" class="text-red-500">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="FullName">
+              Full Name
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="FullName"
+              name="fullName"
+              type="text"
+              placeholder="Enter Full Name..."
+              [(ngModel)]="product.FullName"
+              required
+              #fullName="ngModel"
+            />
+            <div *ngIf="fullName.invalid && fullName.touched" class="text-red-500">
+              Full name is required.
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="Phone">
+              Phone
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="Phone"
+              name="phone"
+              type="tel"
+              pattern="[0-9]{10}"
+              placeholder="Enter Phone..."
+              [(ngModel)]="product.Phone"
+              required
+              #phone="ngModel"
+            />
+            <div *ngIf="phone.invalid && phone.touched" class="text-red-500">
+              <div *ngIf="phone.errors?.['required']">Phone number is required.</div>
+              <div *ngIf="phone.errors?.['pattern']">Invalid phone number format. Must be 10 digits.</div>
+            </div>
+          </div>
+          <div class="grid gap-2">
+            <label class="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-base" for="Address">
+              Address
+            </label>
+            <input
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              id="Address"
+              name="address"
+              type="text"
+              placeholder="Enter Address..."
+              [(ngModel)]="product.Address"
+              required
+              #address="ngModel"
+            />
+            <div *ngIf="address.invalid && address.touched" class="text-red-500">
+              Address is required.
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center p-6">
+          <button type="submit" [disabled]="userForm.invalid" class="bg-blue-700 text-white inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8">
+            Change User
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+  
