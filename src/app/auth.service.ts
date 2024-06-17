@@ -10,6 +10,7 @@ export class AuthService {
   isAuthenticated(): boolean {
     const token = localStorage.getItem('access_token');
     // Kiểm tra token có tồn tại và có giá trị hợp lệ
+    console.log('token', token);
     return !!token;
   }
   getToken(): string | null {
